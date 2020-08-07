@@ -1,4 +1,4 @@
-const dishes = {
+export const dishes = {
   pasta: [
     {
       name: 'parmesan',
@@ -217,5 +217,14 @@ export class DishToEmissionsMapper {
     }
 
     return undefined
+  }
+
+  getAllIngredients(): Ingredient[] {
+    const ingredients: Ingredient[] = []
+    Object.keys(dishes).forEach(dish => {
+      dishes[dish].map(ingredient => ingredients.push(ingredient))
+    })
+
+    return ingredients
   }
 }
