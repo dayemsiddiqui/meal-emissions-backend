@@ -146,7 +146,7 @@ export interface Ingredient {
   weight: string
 }
 
-class DishToEmissionsMapper {
+export class DishToEmissionsMapper {
   map(dish: string): DishWithIngredients {
     const ingredients: Ingredient[] = dishes[dish]
     if (ingredients) {
