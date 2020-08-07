@@ -130,6 +130,65 @@ const dishes = {
       water: '0.1',
       weight: '25',
     }
+  ],
+  lasagna: [
+    {
+      name: 'Flour',
+      energy: '30',
+      co2: '25',
+      water: '1.2',
+      weight: '25',
+    },
+    {
+      name: 'beef',
+      energy: '26',
+      co2: '422',
+      water: '0.88',
+      weight: '25',
+    },
+    {
+      name: 'Mozzarella',
+      energy: '63',
+      co2: '169',
+      water: '2.25',
+      weight: '25',
+    },
+    {
+      name: 'parmesan',
+      energy: '93',
+      co2: '235',
+      water: '3.18',
+      weight: '25',
+    },
+    {
+      name: 'tomatoes',
+      energy: '5',
+      co2: '16',
+      water: '0.1',
+      weight: '25',
+    },
+    {
+      name: 'ricotta',
+      energy: '39',
+      co2: '16',
+      water: '1.05',
+      weight: '25',
+    },
+    {
+      name: 'lasagna noodles',
+      energy: '93',
+      co2: '37',
+      water: '0.38',
+      weight: '25',
+    },
+    ,
+    {
+      name: 'egg',
+      energy: '30',
+      co2: '68',
+      water: '1.0',
+      weight: '25',
+    },
   ]
 }
 
@@ -157,9 +216,6 @@ export class DishToEmissionsMapper {
       return result
     }
 
-    const defaultDish: DishWithIngredients = {
-      dishName: 'biryani',
-      ingredients: dishes.biryani
-    }
+    return undefined
   }
 }
