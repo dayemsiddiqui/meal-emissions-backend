@@ -19,10 +19,10 @@ export class DetectionController {
     const filePath = this.storage.write(file)
 
     // Performs label detection on the image file
-    const [result] = await this.client.labelDetection(filePath);
-    const labels = result.labelAnnotations;
-    console.log('Labels:');
-    labels.forEach(label => console.log(label.description));
+    // const [result] = await this.client.labelDetection(filePath);
+    // const labels = result.labelAnnotations;
+    // console.log('Labels:');
+    // labels.forEach(label => console.log(label.description));
     const results = await this.detectorService.process(file)
     return { status: 'success', payload: results }
   }
@@ -31,23 +31,23 @@ export class DetectionController {
     // Construct request
     // params is additional domain-specific parameters.
     // score_threshold is used to filter the result
-    const request = {
-      name: this.client.modelPath('elated-bebop-154812', location, modelId),
-      payload: {
-        image: {
-          imageBytes: file.buffer,
-        },
-      },
-    };
+    // const request = {
+    //   name: this.client.modelPath('elated-bebop-154812', location, modelId),
+    //   payload: {
+    //     image: {
+    //       imageBytes: file.buffer,
+    //     },
+    //   },
+    // };
 
-    const [response] = await this.client.predict(request);
-
-    for (const annotationPayload of response.payload) {
-      console.log(`Predicted class name: ${annotationPayload.displayName}`);
-      console.log(
-        `Predicted class score: ${annotationPayload.classification.score}`
-      );
-    }
+    // const [response] = await this.client.predict(request);
+    //
+    // for (const annotationPayload of response.payload) {
+    //   console.log(`Predicted class name: ${annotationPayload.displayName}`);
+    //   console.log(
+    //     `Predicted class score: ${annotationPayload.classification.score}`
+    //   );
+    // }
   }
 
 }
